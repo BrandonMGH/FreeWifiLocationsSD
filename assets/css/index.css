@@ -1,5 +1,7 @@
 
-.MainContainer {
+
+
+#MapContainer {
     display: flex 
 }
 
@@ -15,3 +17,13 @@
     width: 25%
 }
 
+#BusinessTypeContainer {
+    display: grid; 
+    text-align: center; 
+}
+
+#BusinessTypesContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
