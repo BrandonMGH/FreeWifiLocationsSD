@@ -1,5 +1,7 @@
 
-
+h1{
+    text-align: center; 
+}
 
 #MapContainer {
     display: flex 
