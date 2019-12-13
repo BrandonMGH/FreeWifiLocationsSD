@@ -1,14 +1,14 @@
-const axios = require("axios")
+const testButton = document.getElementById("testButton")
 
-let placeHolder = ""
-
-let test = function (){
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-    .then(data => {
-        let test = data 
-        console.log(test)
-    })
+let fetchGet = function (locationInfo) {
+  fetch(`http://www.mapquestapi.com/geocoding/v1/address?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&location=${locationInfo}`)
+.then( res => res.json())
+.then(location => console.log(location))
 }
 
 
-console.log(test())
+testButton.onclick = function () {
+ let newVar = document.getElementById("testInput").value 
+ console.log(newVar)
+ fetchGet(newVar)
+}
