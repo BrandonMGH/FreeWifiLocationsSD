@@ -1,24 +1,32 @@
 
 
-const currentLocButton = document.getElementById("")
+const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
-const mapQuestURL = "https://www.mapquestapi.com/staticmap/v4/getmap?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&size=600,400&zoom=11&center=4=32.81576,-117.163817"
+
+
+let latitude = "32.81576"
+let longitude = "-117.163817"
+let mapQuestStatic = `http://www.mapquestapi.com/staticmap/v5/map?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&type=map&size=600,400&locations=${latitude},${longitude}|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1848547955`
 
 let getLocation = function() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(printLocation);
+    navigator.geolocation.getCurrentPosition(getCords);
   } else {
     console.log("Geolocation is not supported by this browser.");
   }
 }
 
-let printLocation = function (position) {
-  let latitude = position.coords.latitude
-  let longitude = position.coords.longitude
+let getCords = function (position) {
+   latitude = position.coords.latitude
+   longitude = position.coords.longitude
   console.log(`Latitude: ${latitude}, Longitutde: ${longitude}`)
-  mapQuestURL = `https://www.mapquestapi.com/staticmap/v4/getmap?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&size=600,400&zoom=11&center=4=${latitude},${longitude}`
-  document.getElementById("imgTest").src = mapQuestURL
+  printMap(); 
 } 
+
+let printMap = function () {
+  document.getElementById("imgTest").src = mapQuestStatic
+  console.log(latitude, longitude)
+}
 
 let fetchGet = function (locationInfo) {
   fetch(`http://www.mapquestapi.com/geocoding/v1/address?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&location=${locationInfo}`)
@@ -31,4 +39,8 @@ customLocButton.onclick = function () {
  let newVar = document.getElementById("customLocInput").value 
  console.log(newVar)
  fetchGet(newVar)
+}
+
+currentLocButton.onclick = function () {
+  getLocation()
 }
