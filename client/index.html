@@ -11,9 +11,11 @@
         <h1>Free Wifi Near You (San Diego)</h1>
         <div id="MapContainer">
             <div id="SideBar">
-                <h3>Your Location</h3>
-                <input id="testInput" value="inputText">
-                <button value="map" id="testButton">Test</button>
+                <h3>Current Location</h3>
+                <button value="map" id="currentLocButton">Current Location</button>
+                <h3>Custom Location</h3>
+                <input id="customLocInput" value="Enter address">
+                <button id="customLocButton">Custom Location</button>
                 <h1>Location Types</h1>
                 <div id="BusinessTypesContainer">
                     <div>Cafes</div>
@@ -25,15 +27,15 @@
             </div>
             <div id="MapArea">
                 <h3> Main Map area</h3>
-                <img id="imgTest" src="https://www.mapquestapi.com/staticmap/v4/getmap?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&size=600,400&zoom=11&center=32.81576,-117.163817" />
+                <img id="imgTest"
+                    src="https://www.mapquestapi.com/staticmap/v4/getmap?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&size=600,400&zoom=11&center=32.81576,-117.163817" />
                 <p id="testArea"></p>
             </div>
         </div>
     </div>
     <script src="assets/js/index.js">
-    fetch()
     </script>
-    
+
 </body>
 
 </html>
