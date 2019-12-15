@@ -23,7 +23,7 @@ let printLocation = function (position) {
 let fetchGet = function (locationInfo) {
   fetch(`http://www.mapquestapi.com/geocoding/v1/address?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&location=${locationInfo}`)
 .then( res => res.json())
-.then(location => console.log(location))
+.then(location => console.log(location.results[0].locations[0]))
 }
 
 
