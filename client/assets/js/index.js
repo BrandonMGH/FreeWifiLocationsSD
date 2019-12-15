@@ -31,16 +31,15 @@ let getCords = function (position) {
 } 
 
 let fetchGet = function (locationInfo) {
-  fetch(`http://www.mapquestapi.com/geocoding/v1/address?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&location=${locationInfo}`)
+  fetch(`http://localhost:3000/MapQuestInfo`)
 .then( res => res.json())
-.then(location => console.log(location.results[0].locations[0]))
+.then(data => console.log(data))
 }
 
 
 customLocButton.onclick = function () {
- let newVar = document.getElementById("customLocInput").value 
- console.log(newVar)
- fetchGet(newVar)
+
+ fetchGet()
 }
 
 currentLocButton.onclick = function () {
