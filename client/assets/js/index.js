@@ -37,9 +37,15 @@ let fetchGet = function (paramOne, paramTwo) {
 .then(data => {
   let test = data.searchResults
   test.map(element => {
-    console.log(element.fields.address, element.fields.city, element.fields.state, element.fields.postal_code)
+   
+     let address = element.fields.address
+     let city = element.fields.city
+     let state = element.fields.state
+     let  zipCode = element.fields.postal_code
+    
+    console.log(address, city, state, zipCode)
   })
-  console.log(data.searchResults)
+  
 })
 }
 
