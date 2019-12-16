@@ -27,9 +27,20 @@
             </div>
             <div id="MapArea">
                 <h3> Main Map area</h3>
-                <img id="imgTest"
-                    src="http://www.mapquestapi.com/staticmap/v5/map?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&type=map&size=600,400&locations=34.052238,-118.243344|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1848547955" />
-                <p id="testArea"></p>
+                <div id="mapContentContainer">
+                    <div id="addressesContainer">
+                        <div>
+                            <h4>Address closest to you:</h4>
+                            <p id="addressLineOne">--</p>
+                            <p id="addressLineTwo">--</p>
+                            <h4>Locations close to you with free wifi</h4>
+                        </div>
+                    </div>
+                    <div id="mapContainer">
+                    <img id="imgTest"
+                        src="http://www.mapquestapi.com/staticmap/v5/map?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&type=map&size=600,400&locations=34.052238,-118.243344|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1848547955" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>

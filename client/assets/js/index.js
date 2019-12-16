@@ -35,16 +35,17 @@ let fetchGet = function (paramOne, paramTwo) {
   fetch(`http://localhost:3000/MapQuestInfo/${paramOne}/${paramTwo}`)
 .then( res => res.json())
 .then(data => {
-  let test = data.searchResults
-  test.map(element => {
+  let addressInfo = data.searchResults[0].fields
+  
    
-     let address = element.fields.address
-     let city = element.fields.city
-     let state = element.fields.state
-     let  zipCode = element.fields.postal_code
+     let address = addressInfo.address
+     let city = addressInfo.city
+     let state = addressInfo.state
+     let zipCode = addressInfo.postal_code
     
-    console.log(address, city, state, zipCode)
-  })
+    console.log(addressInfo)
+    document.getElementById("addressLineOne").innerHTML = address
+    document.getElementById("addressLineTwo").innerHTML = `${city}, ${state}, ${zipCode}`
   
 })
 }

@@ -29,3 +29,12 @@ h1{
     grid-template-columns: 1fr 1fr;
     justify-content: center;
 }
+
+#mapContentContainer{
+    display: flex; 
+    justify-content: space-evenly; 
+}
+
+#addressesContainer, #mapContainer {
+    display: grid; 
+}
