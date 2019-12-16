@@ -34,7 +34,13 @@ let getCords = function (position) {
 let fetchGet = function (paramOne, paramTwo) {
   fetch(`http://localhost:3000/MapQuestInfo/${paramOne}/${paramTwo}`)
 .then( res => res.json())
-.then(data => console.log(data))
+.then(data => {
+  let test = data.searchResults
+  test.map(element => {
+    console.log(element.fields.address, element.fields.city, element.fields.state, element.fields.postal_code)
+  })
+  console.log(data.searchResults)
+})
 }
 
 
