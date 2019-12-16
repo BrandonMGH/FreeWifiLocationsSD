@@ -25,22 +25,18 @@ let printMap = function () {
 let getCords = function (position) {
    latitude = position.coords.latitude
    longitude = position.coords.longitude
-   mapQuestStatic = `http://www.mapquestapi.com/staticmap/v5/map?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&type=map&size=600,400&locations=${latitude},${longitude}|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1848547955`
+  //  mapQuestStatic = `http://www.mapquestapi.com/staticmap/v5/map?key=Caw3YlgZ6hKw9GVS49dNHOVfR1mqbGCy&type=map&size=600,400&locations=${latitude},${longitude}|marker-sm-50318A-1&scalebar=true&zoom=12&rand=1848547955`
   console.log(`Latitude: ${latitude}, Longitutde: ${longitude}`)
-  printMap(); 
+  // printMap(); 
+  fetchGet(latitude, longitude)
 } 
 
-let fetchGet = function (locationInfo) {
-  fetch(`http://localhost:3000/MapQuestInfo`)
+let fetchGet = function (paramOne, paramTwo) {
+  fetch(`http://localhost:3000/MapQuestInfo/${paramOne}/${paramTwo}`)
 .then( res => res.json())
 .then(data => console.log(data))
 }
 
-
-customLocButton.onclick = function () {
-
- fetchGet()
-}
 
 currentLocButton.onclick = function () {
   getLocation()
