@@ -2,17 +2,11 @@
 
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
-// const mymap = L.map('mapContainer').setView([0, 0], 0);
-// const mymarker = L.marker([0,0]).addTo(mymap)
-
-let mymap = L.map('mapid').setView([51.505, -0.09], 13);
+const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
 tiles.addTo(mymap);;
-
-let latitude = "32.81576"
-let longitude = "-117.163817"
 
 let getLocation = function () {
   if (navigator.geolocation) {
