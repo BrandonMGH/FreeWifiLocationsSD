@@ -1,12 +1,29 @@
-import placeMarkerObject from "./placeMarkerObject.js"
-console.log(placeMarkerObject)
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
 const myMarker= L.marker([32.81576, -117.163817]).addTo(mymap);
 const markerObject = { 
-  firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap), 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap), }
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap),
+  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap),
+  ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
+  fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
+  petcoPark: L.marker([32.706539, -117.156349]).addTo(mymap),
+  halfDoorBrewingCompany: L.marker([32.5417302, -117.163817]).addTo(mymap),
+  theTacoStandDowntown: L.marker([32.717740, -117.158670]).addTo(mymap),
+  societeBrewingCompany: L.marker([32.834900, -117.146180]).addTo(mymap),
+  fashionValley: L.marker([32.768051, -117.166901]).addTo(mymap),
+  harrysCoffeeShop: L.marker([32.841530, -117.272440]).addTo(mymap),
+  laValenciaHotel: L.marker([32.848640, -117.273770]).addTo(mymap),
+  eddieVsPrimeSeafood: L.marker([32.849610, -117.271150]).addTo(mymap),
+  islandPrimeAndCLevel: L.marker([32.724370, -117.188640]).addTo(mymap),
+  bOBeauKitchenBar: L.marker([32.753050, -117.245110]).addTo(mymap),
+  cafeMoto: L.marker([32.695630, -117.137660]).addTo(mymap),
+  philzCoffeeShop: L.marker([32.977310, -117.230377]).addTo(mymap),
+  firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
+  firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
+  firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
+  firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
+}
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
