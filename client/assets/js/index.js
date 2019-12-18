@@ -1,5 +1,5 @@
-
-
+import placeMarkerObject from "./placeMarkerObject.js"
+console.log(placeMarkerObject)
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
