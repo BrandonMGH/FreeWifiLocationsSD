@@ -3,8 +3,10 @@
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
-const myMarker= L.marker([32.81576, -117.163817-0.09]).addTo(mymap);
-const secondMarker = L.marker([33.2417302, -117.2691895]).addTo(mymap);
+const myMarker= L.marker([32.81576, -117.163817]).addTo(mymap);
+const markerObject = { 
+  firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap), 
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap), }
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
