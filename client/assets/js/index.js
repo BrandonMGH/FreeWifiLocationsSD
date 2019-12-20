@@ -1,7 +1,19 @@
+
+
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
-const myMarker= L.marker([32.81576, -117.163817]).addTo(mymap);
+var greenIcon = L.icon({
+  iconUrl: './images/arrowdownred.png',
+  shadowUrl: './images/arrowdownred.png',
+  iconSize:     [50, 64], 
+  shadowSize:   [40, 54], 
+  iconAnchor:   [22, 94], 
+  shadowAnchor: [4, 62],  
+  popupAnchor:  [-3, -76] 
+});
+
+const myMarker= L.marker([32.81576, -117.163817], {icon: greenIcon}).addTo(mymap);
 const markerObject = { 
   balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap),
