@@ -10,6 +10,10 @@ let mapQuestAPIURL = `http://www.mapquestapi.com/search/v2/radius?key=${mapQuest
 
 app.use(express.static("client/assets"));
 
+app.get("/googleMap", (req, res) => {
+    res.send("Hello there")
+})
+
 app.get("/MapQuestInfo/:lat/:long", async (req, res) => {
     let latitude = req.params.lat
     let longitude = req.params.long
