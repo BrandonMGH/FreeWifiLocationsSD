@@ -13,7 +13,7 @@ const greenIcon = L.icon({
 });
 const myMarker= L.marker([32.81576, -117.163817], {icon: greenIcon}).addTo(mymap);
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<a href=googleMap>Balboa Park</a>."),
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<a href=googleMap/BalboaPark>Balboa Park</a>."),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
