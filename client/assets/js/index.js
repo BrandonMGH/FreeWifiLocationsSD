@@ -14,7 +14,7 @@ const greenIcon = L.icon({
 });
 const myMarker= L.marker([32.81576, -117.163817], {icon: greenIcon}).addTo(mymap);
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap),
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b>test</b>.").openPopup(),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
@@ -82,7 +82,7 @@ currentLocButton.onclick = function () {
   getLocation()
 }
 
-let onMapClick = function (e) {
+let onMapClick = function(e) {
   alert("You clicked the map at " + e.latlng);
 }
 
