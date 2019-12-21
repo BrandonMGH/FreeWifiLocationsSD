@@ -82,3 +82,8 @@ currentLocButton.onclick = function () {
   getLocation()
 }
 
+let onMapClick = function (e) {
+  alert("You clicked the map at " + e.latlng);
+}
+
+mymap.on('click', onMapClick);
