@@ -5,11 +5,11 @@ const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
 const greenIcon = L.icon({
   iconUrl: './images/arrowdownred.png',
-  shadowUrl: './images/arrowdownred.png',
+  shadowUrl: './images/arrowdownredshadow.png',
   iconSize:     [50, 64], 
-  shadowSize:   [40, 54], 
+  shadowSize:   [50, 64], 
   iconAnchor:   [22, 94], 
-  shadowAnchor: [4, 62],  
+  shadowAnchor: [18, 90],  
   popupAnchor:  [-3, -76] 
 });
 const myMarker= L.marker([32.81576, -117.163817], {icon: greenIcon}).addTo(mymap);
@@ -50,7 +50,7 @@ let getLocation = function () {
 
 let printMap = function (Lat, Long) {
   mymap.setView([Lat, Long], 12)
-  myMarker.setLatLng([Lat, Long], 12).bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+  myMarker.setLatLng([Lat, Long], 12).bindPopup("<b>You are here!</b>.").openPopup();
 }
 
 let getCords = function (position) {
