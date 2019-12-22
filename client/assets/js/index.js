@@ -1,14 +1,7 @@
 
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
-const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
-L.Routing.control({
-  waypoints: [
-    L.latLng(32.81576, -117.163817),
-    L.latLng(32.730831, -117.142586)
-  ]
-}).addTo(mymap);
-
+const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
 const greenIcon = L.icon({
   iconUrl: './images/arrowdownred.png',
   shadowUrl: './images/arrowdownredshadow.png',
@@ -19,6 +12,9 @@ const greenIcon = L.icon({
   popupAnchor:  [-3, -76] 
 });
 const myMarker= L.marker([32.81576, -117.163817], {icon: greenIcon}).addTo(mymap);
+
+
+
 const markerObject = { 
   balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<a href=googleMap/BalboaPark>Balboa Park</a>."),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap),
@@ -90,14 +86,14 @@ currentLocButton.onclick = function () {
 
 var popup = L.popup();
 
-function onMapClick(e) {
+function onMapClick() {
 
-  if(popup == markerObject.balboaParkMarker){
-    popup
-    .setLatLng(e.latlng)
-    .setContent("You clicked the map at " + e.latlng.toString())
-    .openOn(mymap);
-  }
+  L.Routing.control({
+    waypoints: [
+      L.latLng(33.239596, -117.281127),
+      L.latLng(32.730831, -117.142586)
+    ]
+  }).addTo(mymap);
    
 }
 
