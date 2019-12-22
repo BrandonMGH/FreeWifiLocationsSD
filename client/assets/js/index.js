@@ -2,6 +2,13 @@
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid').setView([32.81576, -117.163817], 12);
+L.Routing.control({
+  waypoints: [
+    L.latLng(32.81576, -117.163817),
+    L.latLng(32.730831, -117.142586)
+  ]
+}).addTo(mymap);
+
 const greenIcon = L.icon({
   iconUrl: './images/arrowdownred.png',
   shadowUrl: './images/arrowdownredshadow.png',
