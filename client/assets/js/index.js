@@ -1,4 +1,6 @@
 
+let currentLat = 32.81576;
+let currentLong = -117.163817;
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
@@ -11,13 +13,27 @@ const greenIcon = L.icon({
   shadowAnchor: [18, 90],  
   popupAnchor:  [-3, -76] 
 });
-const myMarker= L.marker([32.81576, -117.163817], {icon: greenIcon}).addTo(mymap);
+const myMarker= L.marker([currentLat, currentLong], {icon: greenIcon}).addTo(mymap);
 
 
 
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<a href=googleMap/BalboaPark>Balboa Park</a>."),
-  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap),
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<a href=googleMap/BalboaPark>Balboa Park</a>.").on('click', function () {
+    L.Routing.control({
+      waypoints: [
+        L.latLng(currentLat, currentLong),
+        L.latLng(32.730831, -117.142586)
+      ]
+    }).addTo(mymap);
+  }),
+  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<a href=googleMap/BalboaPark>Ale Smith Brewing Company</a>.").on('click', function () {
+    L.Routing.control({
+      waypoints: [
+        L.latLng(currentLat, currentLong),
+        L.latLng(32.730831, -117.142586)
+      ]
+    }).addTo(mymap);
+  }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
   petcoPark: L.marker([32.706539, -117.156349]).addTo(mymap),
@@ -56,11 +72,11 @@ let printMap = function (Lat, Long) {
 }
 
 let getCords = function (position) {
-  latitude = position.coords.latitude
-  longitude = position.coords.longitude
-  console.log(`Latitude: ${latitude}, Longitutde: ${longitude}`)
-  fetchGet(latitude, longitude)
-  printMap(latitude, longitude)
+   currentLat = position.coords.latitude
+   currentLong = position.coords.longitude
+  console.log(`Latitude: ${currentLat}, Longitutde: ${currentLong}`)
+  fetchGet(currentLat, currentLong)
+  printMap(currentLat, currentLong)
 }
 
 let fetchGet = function (paramOne, paramTwo) {
@@ -86,15 +102,15 @@ currentLocButton.onclick = function () {
 
 var popup = L.popup();
 
-function onMapClick() {
-
+function onMapClick(coorArr) {
+console.log(coorArr)
   L.Routing.control({
     waypoints: [
-      L.latLng(33.239596, -117.281127),
+      L.latLng(currentLat, currentLong),
       L.latLng(32.730831, -117.142586)
     ]
   }).addTo(mymap);
    
 }
 
-mymap.on('click', onMapClick);
+// mymap.on('click', onMapClick);
