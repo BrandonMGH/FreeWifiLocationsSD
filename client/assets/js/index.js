@@ -18,7 +18,7 @@ const myMarker= L.marker([currentLat, currentLong], {icon: greenIcon}).addTo(mym
 
 
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<a href=googleMap/BalboaPark>Balboa Park</a>.").on('click', function () {
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b>.").on('click', function () {
     L.Routing.control({
       waypoints: [
         L.latLng(currentLat, currentLong),
@@ -26,7 +26,7 @@ const markerObject = {
       ]
     }).addTo(mymap);
   }),
-  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<a href=googleMap/BalboaPark>Ale Smith Brewing Company</a>.").on('click', function () {
+  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b>.").on('click', function () {
     L.Routing.control({
       waypoints: [
         L.latLng(currentLat, currentLong),
