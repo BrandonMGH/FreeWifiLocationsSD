@@ -30,7 +30,7 @@ const markerObject = {
     L.Routing.control({
       waypoints: [
         L.latLng(currentLat, currentLong),
-        L.latLng(32.730831, -117.142586)
+        L.latLng(32.888168, -117.149643)
       ]
     }).addTo(mymap);
   }),
