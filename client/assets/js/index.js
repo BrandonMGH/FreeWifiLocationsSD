@@ -96,21 +96,21 @@ let fetchGet = function (paramOne, paramTwo) {
 }
 
 
+
 currentLocButton.onclick = function () {
   getLocation()
 }
 
-var popup = L.popup();
 
-function onMapClick(coorArr) {
-console.log(coorArr)
-  L.Routing.control({
-    waypoints: [
-      L.latLng(currentLat, currentLong),
-      L.latLng(32.730831, -117.142586)
-    ]
-  }).addTo(mymap);
+// function onMapClick(coorArr) {
+// console.log(coorArr)
+//   L.Routing.control({
+//     waypoints: [
+//       L.latLng(currentLat, currentLong),
+//       L.latLng(32.730831, -117.142586)
+//     ]
+//   }).addTo(mymap);
    
-}
+// }
 
 // mymap.on('click', onMapClick);
