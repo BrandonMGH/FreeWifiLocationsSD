@@ -1,6 +1,9 @@
 
-let currentLat = 32.81576;
-let currentLong = -117.163817;
+let currentLat = 32.81576
+let currentLong = -117.163817
+let endLat = 32.730831
+let endLong = -117.142586
+
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
@@ -14,7 +17,13 @@ const greenIcon = L.icon({
   popupAnchor:  [-3, -76] 
 });
 const myMarker= L.marker([currentLat, currentLong], {icon: greenIcon}).addTo(mymap);
-
+let routeGenerator = L.Routing.control({
+  waypoints: [
+    L.latLng(currentLat, currentLong),
+    L.latLng(endLat, endLong)
+  ],
+  autoRoute: true
+}).addTo(mymap);
 
 
 const markerObject = { 
@@ -23,7 +32,8 @@ const markerObject = {
       waypoints: [
         L.latLng(currentLat, currentLong),
         L.latLng(32.730831, -117.142586)
-      ]
+      ],
+      autoRoute: true
     }).addTo(mymap);
   }),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b>.").on('click', function () {
@@ -31,7 +41,11 @@ const markerObject = {
       waypoints: [
         L.latLng(currentLat, currentLong),
         L.latLng(32.888168, -117.149643)
-      ]
+      ],
+      router: new L.Routing.osrmv1({
+        language: 'en',
+        profile: 'car'
+      })
     }).addTo(mymap);
   }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
