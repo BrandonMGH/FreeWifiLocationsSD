@@ -1,8 +1,6 @@
 
 let currentLat = 32.81576
 let currentLong = -117.163817
-let endLat = 32.730831
-let endLong = -117.142586
 
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
@@ -18,7 +16,7 @@ const greenIcon = L.icon({
 });
 const myMarker= L.marker([currentLat, currentLong], {icon: greenIcon}).addTo(mymap);
 
-let routeGenerator = (paramOne, paramTwo) => {
+let routeGenerator = (endLat, endLong) => {
   L.Routing.control({
     waypoints: [
       L.latLng(currentLat, currentLong),
@@ -31,10 +29,10 @@ let routeGenerator = (paramOne, paramTwo) => {
 
 const markerObject = { 
   balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b>.").on('click', function () {
-    routeGenerator(1,2)
+    routeGenerator(32.730831,-117.142586)
   }),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b>.").on('click', function () {
-    routeGenerator()
+    routeGenerator(32.888168, -117.149643)
   }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
