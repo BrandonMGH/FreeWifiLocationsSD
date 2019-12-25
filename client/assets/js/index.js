@@ -17,36 +17,24 @@ const greenIcon = L.icon({
   popupAnchor:  [-3, -76] 
 });
 const myMarker= L.marker([currentLat, currentLong], {icon: greenIcon}).addTo(mymap);
-let routeGenerator = L.Routing.control({
-  waypoints: [
-    L.latLng(currentLat, currentLong),
-    L.latLng(endLat, endLong)
-  ],
-  autoRoute: true
-}).addTo(mymap);
+
+let routeGenerator = (paramOne, paramTwo) => {
+  L.Routing.control({
+    waypoints: [
+      L.latLng(currentLat, currentLong),
+      L.latLng(endLat, endLong)
+    ],
+  }).addTo(mymap);
+  
+};
 
 
 const markerObject = { 
   balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b>.").on('click', function () {
-    L.Routing.control({
-      waypoints: [
-        L.latLng(currentLat, currentLong),
-        L.latLng(32.730831, -117.142586)
-      ],
-      autoRoute: true
-    }).addTo(mymap);
+    routeGenerator(1,2)
   }),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b>.").on('click', function () {
-    L.Routing.control({
-      waypoints: [
-        L.latLng(currentLat, currentLong),
-        L.latLng(32.888168, -117.149643)
-      ],
-      router: new L.Routing.osrmv1({
-        language: 'en',
-        profile: 'car'
-      })
-    }).addTo(mymap);
+    routeGenerator()
   }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
