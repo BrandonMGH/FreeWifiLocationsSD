@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require("express")
 const fetch = require("node-fetch")
+const path = require("path")
 const app = express();
 const PORT = 3000
 
@@ -13,9 +14,10 @@ let mapQuestAPIURL = `http://www.mapquestapi.com/search/v2/radius?key=${mapQuest
 
 app.use(express.static("client/assets"));
 
-app.post("/userinfo", (req, res) => {
-    let userInfo=req.body
-    res.json(userInfo)
+//** GET ROUTES  **//
+
+app.get("/maproutes", (req, res) => {;
+    res.sendFile(path.join(__dirname, "./client/assets/mapRoute.html"))
 })
 
 app.get("/googleMap/:Location", (req, res) => {
@@ -33,6 +35,13 @@ app.get("/MapQuestInfo/:lat/:long", async (req, res) => {
     const fetch_response = await fetch(mapQuestAPIURL)
     const json = await fetch_response.json();
     res.json(json)
+})
+
+//** POST ROUTES **//
+
+app.post("/userinfo", (req, res) => {
+    let userInfo=req.body
+    res.json(userInfo)
 })
 
 app.listen(PORT, () => {
