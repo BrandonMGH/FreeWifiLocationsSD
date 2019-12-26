@@ -4,11 +4,19 @@ const fetch = require("node-fetch")
 const app = express();
 const PORT = 3000
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 let mapQuestAPIKey = process.env.MAPQUEST_API_KEY
 let mapQuestAPIURL = `http://www.mapquestapi.com/search/v2/radius?key=${mapQuestAPIKey}&maxMatches=4&origin=33.2398592,-117.2692321`
 
 
 app.use(express.static("client/assets"));
+
+app.post("/userinfo", (req, res) => {
+    let userInfo=req.body
+    res.json(userInfo)
+})
 
 app.get("/googleMap/:Location", (req, res) => {
     res.send(

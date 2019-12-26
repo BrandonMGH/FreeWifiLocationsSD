@@ -1,4 +1,5 @@
 
+
 let currentLat = 32.81576
 let currentLong = -117.163817
 
