@@ -2,9 +2,12 @@
 
 let currentLat = 32.81576
 let currentLong = -117.163817
+let endLat = 32.730831
+let endLong = -117.142586
 
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
+
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
 const greenIcon = L.icon({
   iconUrl: './images/arrowdownred.png',
@@ -17,22 +20,33 @@ const greenIcon = L.icon({
 });
 const myMarker= L.marker([currentLat, currentLong], {icon: greenIcon}).addTo(mymap);
 
-let routeGenerator = (endLatLong) => {
+let routeGenerator = () => {
   L.Routing.control({
     waypoints: [
       L.latLng(currentLat, currentLong),
-      L.latLng(endLatLong[0], endLatLong[1])
+      L.latLng(endLat, endLong)
     ],
+    autoRoute: true, 
   }).addTo(mymap);
 };
 
+let testPrompt = () => {
+  let testprompt = prompt("LOL")
+  if(testprompt === "yes" || testprompt === "Yes"){
+    routeGenerator(); 
+  } else {
+    console.log("no time for love doctor jones")
+  }
+}
 
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b>.").on('click', function () {
-    routeGenerator([32.730831,-117.142586])
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=testPrompt()>test</button>.").on('click', function () {
+    endLat = 32.730831
+    endLong = -117.142586
   }),
-  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b>.").on('click', function () {
-    routeGenerator([32.888168, -117.149643])
+  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=testPrompt()>test</button>.").on('click', function () {
+    endLat = 32.888168
+    endLong = -117.149643
   }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
