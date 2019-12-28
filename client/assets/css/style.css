@@ -74,10 +74,13 @@ h1{
 
 #modalContainer {
     position: relative; 
+    display: flex; 
+    justify-content: center;
     margin: auto; 
     border: black 2px solid;
     background: white; 
-    top: 40%; 
+    top: 20%; 
+    height: 50%; 
     width: 50%;
     box-shadow: 0 4px 8px 0;
     -webkit-animation-name: topReveal;
@@ -88,5 +91,5 @@ h1{
 
 @-webkit-keyframes topReveal {
     from{top: -300px; opacity: 0}
-    to {top: 40%; opacity: 1}
+    to {top: 20%; opacity: 1}
 }
