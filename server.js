@@ -28,6 +28,7 @@ app.get("/googleMap/:Location", (req, res) => {
     `)
 })
 
+
 app.get("/MapQuestInfo/:lat/:long", async (req, res) => {
     let latitude = req.params.lat
     let longitude = req.params.long

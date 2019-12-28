@@ -83,11 +83,11 @@ let getCords = function (position) {
    currentLat = position.coords.latitude
    currentLong = position.coords.longitude
   console.log(`Latitude: ${currentLat}, Longitutde: ${currentLong}`)
-  fetchGet(currentLat, currentLong)
+  fetchMapQuestAddress(currentLat, currentLong)
   printMap(currentLat, currentLong)
 }
 
-let fetchGet = function (paramOne, paramTwo) {
+let fetchMapQuestAddress = function (paramOne, paramTwo) {
   fetch(`http://localhost:3000/MapQuestInfo/${paramOne}/${paramTwo}`)
     .then(res => res.json())
     .then(data => {
