@@ -10,6 +10,9 @@ h1{
     width: 70%
 }
 
+#mapContainer {
+    display: flex;
+}
 
 
 #SideBar {
@@ -33,10 +36,6 @@ h1{
     justify-content: space-evenly; 
 }
 
-#mapContainer {
-    display: flex;
-}
-
 
 #addressesContainer, #mapid {
     display: grid; 
@@ -49,8 +48,19 @@ h1{
     border-color: black
 }
 
+#mapRouteId {
+    width: 100%;
+    height: 350px; 
+}
+
+#mapRouteContainer {
+    display: flex;
+    justify-content: center; 
+    background-color: black; 
+}
+
 #modalBackground {
-    /* display: none;  */
+    display: none; 
     position: fixed; 
     top: 0;
     left: 0; 

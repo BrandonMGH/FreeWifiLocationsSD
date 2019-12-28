@@ -1,5 +1,3 @@
-
-
 let currentLat = 32.81576
 let currentLong = -117.163817
 let endLat = 32.730831
@@ -7,6 +5,9 @@ let endLong = -117.142586
 
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
+const modalButton = document.getElementById("modalButton")
+const modalBackground = document.getElementById("modalBackground")
+
 
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
 const greenIcon = L.icon({
@@ -115,6 +116,9 @@ currentLocButton.onclick = function () {
   getLocation()
 }
 
+modalButton.onclick = function () {
+  modalBackground.style.display= "block"
+}
 
 // function onMapClick(coorArr) {
 // console.log(coorArr)
