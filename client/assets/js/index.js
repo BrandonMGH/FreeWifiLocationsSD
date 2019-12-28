@@ -5,7 +5,6 @@ let endLong = -117.142586
 
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
-const modalButton = document.getElementById("modalButton")
 const modalBackground = document.getElementById("modalBackground")
 
 
@@ -44,6 +43,7 @@ const markerObject = {
   balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=testPrompt()>test</button>.").on('click', function () {
     endLat = 32.730831
     endLong = -117.142586
+    modalBackground.style.display= "block"
   }),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=testPrompt()>test</button>.").on('click', function () {
     endLat = 32.888168

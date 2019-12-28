@@ -1,4 +1,6 @@
 
+/** INDEX.HTML CSS **/
+
 h1{
     text-align: center; 
 }
@@ -48,16 +50,6 @@ h1{
     border-color: black
 }
 
-#mapRouteId {
-    width: 100%;
-    height: 350px; 
-}
-
-#mapRouteContainer {
-    display: flex;
-    justify-content: center; 
-    background-color: black; 
-}
 
 #modalBackground {
     display: none; 
@@ -92,4 +84,20 @@ h1{
 @-webkit-keyframes topReveal {
     from{top: -300px; opacity: 0}
     to {top: 20%; opacity: 1}
+}
+
+#routeObject {
+    width: 100%; ; 
+}
+
+/*8 MAPROUTE.HTML CSS **/ 
+
+#mapRouteId {
+    width: 100%;
+    height: 350px; 
+}
+
+#mapRouteContainer {
+    display: flex;
+    justify-content: center; 
 }
