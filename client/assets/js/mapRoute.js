@@ -11,3 +11,4 @@ let printMap = function (Lat, Long) {
     // myMarker.setLatLng([Lat, Long], 12).bindPopup("<b>You are here!</b>.").openPopup();
   }
 printMap(33.2417075, -117.2692269)
+

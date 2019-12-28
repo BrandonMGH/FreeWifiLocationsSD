@@ -6,6 +6,7 @@ let endLong = -117.142586
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const modalBackground = document.getElementById("modalBackground")
+const span = document.getElementsByClassName("close")[0];
 
 
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
@@ -30,22 +31,14 @@ let routeGenerator = () => {
   }).addTo(mymap);
 };
 
-let testPrompt = () => {
-  let testprompt = prompt("LOL")
-  if(testprompt === "yes" || testprompt === "Yes"){
-    routeGenerator(); 
-  } else {
-    console.log("no time for love doctor jones")
-  }
-}
 
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=testPrompt()>test</button>.").on('click', function () {
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button>test</button>.").on('click', function () {
     endLat = 32.730831
     endLong = -117.142586
     modalBackground.style.display= "block"
   }),
-  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=testPrompt()>test</button>.").on('click', function () {
+  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button>test</button>.").on('click', function () {
     endLat = 32.888168
     endLong = -117.149643
   }),
@@ -111,14 +104,15 @@ let fetchGet = function (paramOne, paramTwo) {
 }
 
 
-
 currentLocButton.onclick = function () {
   getLocation()
 }
 
-modalButton.onclick = function () {
-  modalBackground.style.display= "block"
+span.onclick = function () {
+  modalBackground.style.display= "none"
 }
+
+
 
 // function onMapClick(coorArr) {
 // console.log(coorArr)
