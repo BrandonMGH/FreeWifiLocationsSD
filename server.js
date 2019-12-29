@@ -5,7 +5,7 @@ const fetch = require("node-fetch")
 const path = require("path")
 const app = express();
 const PORT = 3000
-const routeData = require("./client/assets/js/routeData.js")
+let routeData = require("./client/assets/js/routeData.js")
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +18,10 @@ app.use(express.static("client/assets"));
 
 app.get("/maproutes/", (req, res) => {;
     res.sendFile(path.join(__dirname, "./client/assets/mapRoute.html"))
+})
+
+app.get("/api/routeInfo", (req, res) =>{
+    res.json(routeData)
 })
 
 app.get("/googleMap/:Location", (req, res) => {
@@ -46,8 +50,15 @@ app.post("/userinfo", (req, res) => {
     res.json(userInfo)
 })
 
-app.post("/api/routeInfo", (req, res) => {
-    res.json()
+
+//** UPDATE ROUTE  **//
+
+app.put("/api/routeInfo", (req, res) =>{
+    routeData = {
+    latitude: req.body.latitude,
+    longitude: req.body.longitude
+ }
+ res.send(routeData)
 })
 
 console.log(routeData)
