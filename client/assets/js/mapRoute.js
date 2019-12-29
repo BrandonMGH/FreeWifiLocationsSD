@@ -1,5 +1,4 @@
 
-
 const mymap = L.map('mapRouteId', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -12,3 +11,7 @@ let printMap = function (Lat, Long) {
   }
 printMap(33.2417075, -117.2692269)
 
+const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('myParam');
+
+console.log(testVar)

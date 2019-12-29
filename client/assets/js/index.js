@@ -41,6 +41,7 @@ const markerObject = {
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button>test</button>.").on('click', function () {
     endLat = 32.888168
     endLong = -117.149643
+    // testFunc("This value got passed")
   }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
@@ -111,7 +112,6 @@ currentLocButton.onclick = function () {
 span.onclick = function () {
   modalBackground.style.display= "none"
 }
-
 
 
 // function onMapClick(coorArr) {
