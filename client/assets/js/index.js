@@ -10,7 +10,7 @@ const span = document.getElementsByClassName("close")[0];
 
 
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
-const greenIcon = L.icon({
+const currentLocIcon = L.icon({
   iconUrl: './images/arrowdownred.png',
   shadowUrl: './images/arrowdownredshadow.png',
   iconSize:     [50, 64], 
@@ -19,7 +19,7 @@ const greenIcon = L.icon({
   shadowAnchor: [18, 90],  
   popupAnchor:  [-3, -76] 
 });
-const myMarker= L.marker([currentLat, currentLong], {icon: greenIcon}).addTo(mymap);
+const myMarker= L.marker([currentLat, currentLong], {icon: currentLocIcon}).addTo(mymap);
 
 let routeGenerator = () => {
   L.Routing.control({

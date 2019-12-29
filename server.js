@@ -21,7 +21,7 @@ app.get("/maproutes/", (req, res) => {;
 })
 
 app.get("/api/routeInfo", (req, res) =>{
-    res.json(routeData)
+    res.send(routeData)
 })
 
 app.get("/googleMap/:Location", (req, res) => {
@@ -51,7 +51,7 @@ app.post("/userinfo", (req, res) => {
 })
 
 
-//** UPDATE ROUTE  **//
+//** UPDATE ROUTES  **//
 
 app.put("/api/routeInfo", (req, res) =>{
     routeData = {
