@@ -53,7 +53,7 @@ app.post("/userinfo", (req, res) => {
 
 //** UPDATE ROUTES  **//
 
-app.put("/api/routeInfo", (req, res) =>{
+app.put("/api/routeInfo/", (req, res) =>{
     routeData = {
     latitude: req.body.latitude,
     longitude: req.body.longitude
