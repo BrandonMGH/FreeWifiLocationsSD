@@ -21,16 +21,6 @@ const currentLocIcon = L.icon({
 });
 const myMarker= L.marker([currentLat, currentLong], {icon: currentLocIcon}).addTo(mymap);
 
-let routeGenerator = () => {
-  L.Routing.control({
-    waypoints: [
-      L.latLng(currentLat, currentLong),
-      L.latLng(endLat, endLong)
-    ],
-    autoRoute: true, 
-  }).addTo(mymap);
-};
-
 let showMapRoute = function ()  {
   modalBackground.style.display= "block"
 }
