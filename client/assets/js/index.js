@@ -31,26 +31,28 @@ let routeGenerator = () => {
   }).addTo(mymap);
 };
 
+let showMapRoute = function ()  {
+  modalBackground.style.display= "block"
+}
 
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button>test</button>.").on('click', function () {
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=showMapRoute()>test</button>.").on('click', function () {
     endLat = 32.730831
     endLong = -117.142586
-    modalBackground.style.display= "block"
     $.ajax({
       url: `http://localhost:3000/api/routeInfo/`,
       method: `PUT`,
       dataType: `json`,
       data: {
-        latitude: 5,
-        longitude: 5
+        currentLat: currentLat,
+        currentLong: currentLong,
+        endLat: 32.730831,
+        endLong: -117.142586
       },
       success: function(data){
         console.log(data);
       }
     })
- 
-
   }),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button>test</button>.").on('click', function () {
     endLat = 32.888168
