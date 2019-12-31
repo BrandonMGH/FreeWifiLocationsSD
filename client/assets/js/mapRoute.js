@@ -1,4 +1,8 @@
+let mapGenerate = document.getElementById("mapRouteRefresh")
 
+mapGenerate.onclick = function () {
+  window.location.reload(true);
+}
 
 fetch(`http://localhost:3000/api/routeInfo`)
 .then(res => res.json())
@@ -13,7 +17,7 @@ fetch(`http://localhost:3000/api/routeInfo`)
   const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   const tiles = L.tileLayer(tileUrl, { attribution });
   tiles.addTo(mymap);;
-  
+
   let printMap = function () {
     mymap.setView([32.81576, -117.163817], 12)
   }
@@ -28,3 +32,4 @@ fetch(`http://localhost:3000/api/routeInfo`)
   }).addTo(mymap);
 
 })
+

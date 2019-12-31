@@ -1,13 +1,10 @@
 let currentLat = 32.81576
 let currentLong = -117.163817
-let endLat = 32.730831
-let endLong = -117.142586
 
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const modalBackground = document.getElementById("modalBackground")
 const span = document.getElementsByClassName("close")[0];
-
 
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
 const currentLocIcon = L.icon({
@@ -21,14 +18,13 @@ const currentLocIcon = L.icon({
 });
 const myMarker= L.marker([currentLat, currentLong], {icon: currentLocIcon}).addTo(mymap);
 
-let showMapRoute = function ()  {
+let showMapRoute = function (cb)  {
   modalBackground.style.display= "block"
 }
 
+
 const markerObject = { 
   balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=showMapRoute()>test</button>.").on('click', function () {
-    endLat = 32.730831
-    endLong = -117.142586
     $.ajax({
       url: `http://localhost:3000/api/routeInfo/`,
       method: `PUT`,
@@ -44,9 +40,21 @@ const markerObject = {
       }
     })
   }),
-  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button>test</button>.").on('click', function () {
-    endLat = 32.888168
-    endLong = -117.149643
+  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=showMapRoute()>test</button>.").on('click', function () {
+    $.ajax({
+      url: `http://localhost:3000/api/routeInfo/`,
+      method: `PUT`,
+      dataType: `json`,
+      data: {
+        currentLat: currentLat,
+        currentLong: currentLong,
+        endLat: 32.888168,
+        endLong: -117.149643
+      },
+      success: function(data){
+        console.log(data);
+      }
+    })
   }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
