@@ -1,6 +1,12 @@
 let currentLat = 32.81576
 let currentLong = -117.163817
+let locationObj = {
+  locationName: "Default",
+  locationAddress: "Default" 
+}
 
+const addressTitle = document.getElementById("addressTitle")
+const addressLocation = document.getElementById("addressLocation")
 const currentLocButton = document.getElementById("currentLocButton")
 const customLocButton = document.getElementById("customLocButton")
 const modalBackground = document.getElementById("modalBackground")
@@ -18,13 +24,15 @@ const currentLocIcon = L.icon({
 });
 const myMarker= L.marker([currentLat, currentLong], {icon: currentLocIcon}).addTo(mymap);
 
-let showMapRoute = function (cb)  {
+let showMapRoute = function (addressInfo)  {
   modalBackground.style.display= "block"
+  addressTitle.innerHTML = addressInfo.locationName
+  addressLocation.innerHTML = addressInfo.locationAddress
 }
 
 
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=showMapRoute()>test</button>.").on('click', function () {
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=showMapRoute(locationObj)>test</button>.").on('click', function () {
     $.ajax({
       url: `http://localhost:3000/api/routeInfo/`,
       method: `PUT`,
@@ -41,6 +49,11 @@ const markerObject = {
         console.log(data);
       }
     })
+  
+    locationObj.locationName = "Balboa Park"
+    locationObj.locationAddress = "San Diego, CA" 
+    
+       
   }),
   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=showMapRoute()>test</button>.").on('click', function () {
     $.ajax({

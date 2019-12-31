@@ -1,11 +1,9 @@
 let mapGenerate = document.getElementById("mapRouteRefresh")
 let addressTitle = document.getElementById("addressTitle")
-let locationName;
-let locationAddress = "123 Home Street, Miramar, San Diego, 92056"
+
 
 mapGenerate.onclick = function () {
   window.location.reload(true);
-  addressTitle.innerHTML = locationName
 }
 
 fetch(`http://localhost:3000/api/routeInfo`)
