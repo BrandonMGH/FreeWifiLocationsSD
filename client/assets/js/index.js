@@ -30,6 +30,8 @@ const markerObject = {
       method: `PUT`,
       dataType: `json`,
       data: {
+        locationName: "Balboa Park",
+        locationAddress: "San Diego, CA",
         currentLat: currentLat,
         currentLong: currentLong,
         endLat: 32.730831,
