@@ -55,8 +55,6 @@ app.post("/userinfo", (req, res) => {
 
 app.put("/api/routeInfo/", (req, res) =>{
     routeData = {
-    locationName: req.body.locationName,
-    locationAddress: req.body.locationAddress,
     currentLat: req.body.currentLat,
     currentLong: req.body.currentLong,
     endLat: req.body.endLat,

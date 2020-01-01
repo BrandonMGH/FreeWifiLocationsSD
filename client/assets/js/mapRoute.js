@@ -1,6 +1,4 @@
 let mapGenerate = document.getElementById("mapRouteRefresh")
-let addressTitle = document.getElementById("addressTitle")
-
 
 mapGenerate.onclick = function () {
   window.location.reload(true);
@@ -10,8 +8,6 @@ fetch(`http://localhost:3000/api/routeInfo`)
 .then(res => res.json())
 .then(data => {
   console.log(data)
-  locationName = data.locationName
-  locationAddress = data.locationAddress
   let currentLat = data.currentLat
   let currentLong = data.currentLong
   let endLat = data.endLat

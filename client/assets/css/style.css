@@ -90,7 +90,7 @@ h1{
 
 #addressLocation {
     text-align: center; 
-    z-index: 1001
+    z-index: 1001; 
 }
 
 @-webkit-keyframes topReveal {
