@@ -68,14 +68,14 @@ h1{
     position: relative; 
     display: grid; 
     grid-template-columns: 1fr;
-    grid-template-rows: 25% 75%;
+    grid-template-rows: 30% 60%;
     justify-content: center;
     margin: auto; 
     border: black 2px solid;
     background: white; 
     top: 20%; 
-    height: 50%; 
-    width: 50%;
+    height: 70%; 
+    width: 60%;
     box-shadow: 0 4px 8px 0;
     -webkit-animation-name: topReveal;
     -webkit-animation-duration: 0.5s;
@@ -98,8 +98,13 @@ h1{
     to {top: 20%; opacity: 1}
 }
 
+#routeObjectContainer {
+    display: flex; 
+    justify-content: center;
+}
+
 #routeObject {
-    width: 100%;
+    width: 90%;
     height: 100%; 
 }
 
