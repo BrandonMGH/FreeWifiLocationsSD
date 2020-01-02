@@ -117,9 +117,17 @@ h1{
     justify-content: center; 
 }
 
+.close{
+        color: black; 
+        float: right;
+        font-size: 30px;
+        font-weight: bold;
+        margin-right: 1%; 
+}
+
 .close:hover,
 .close:focus {
-  color: #000;
+  color: blue;
   text-decoration: none;
   cursor: pointer;
 }
