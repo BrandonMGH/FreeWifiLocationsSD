@@ -70,8 +70,8 @@ h1{
     margin: auto; 
     border: black 2px solid;
     background: white; 
-    top: 20%; 
-    height: 70%; 
+    top: 10%; 
+    height: 80%; 
     width: 60%;
     box-shadow: 0 4px 8px 0;
     -webkit-animation-name: topReveal;
@@ -92,7 +92,7 @@ h1{
 
 @-webkit-keyframes topReveal {
     from{top: -300px; opacity: 0}
-    to {top: 20%; opacity: 1}
+    to {top: 10%; opacity: 1}
 }
 
 #routeObjectContainer {

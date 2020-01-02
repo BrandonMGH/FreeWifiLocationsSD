@@ -74,8 +74,44 @@ const markerObject = {
     locationObj.locationName = "AleSmith Brewing Company"
     locationObj.locationAddress = "9990 AleSmith Ct, San Diego, CA 92126" 
   }),
-  ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
-  fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
+  ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap).bindPopup("<b>Ballast Point Brewing and Spirits</b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
+    $.ajax({
+      url: `http://localhost:3000/api/routeInfo/`,
+      method: `PUT`,
+      dataType: `json`,
+      data: {
+        currentLat: currentLat,
+        currentLong: currentLong,
+        endLat: 32.887871,
+        endLong: -117.158119
+      },
+      success: function(data){
+        console.log(data);
+      }
+    })
+
+    locationObj.locationName = "Ballast Point Brewing and Spirits"
+    locationObj.locationAddress = "9045 Carroll Way, San Diego, CA 92121" 
+  }),
+  fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap).bindPopup("<b>Fairmont Grand Del Mar</b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
+    $.ajax({
+      url: `http://localhost:3000/api/routeInfo/`,
+      method: `PUT`,
+      dataType: `json`,
+      data: {
+        currentLat: currentLat,
+        currentLong: currentLong,
+        endLat: 32.938412,
+        endLong: -117.197357
+      },
+      success: function(data){
+        console.log(data);
+      }
+    })
+
+    locationObj.locationName = "Fairmont Grand Del Mar"
+    locationObj.locationAddress = "9045 Carroll Way, San Diego, CA 92121" 
+  }),
   petcoPark: L.marker([32.706539, -117.156349]).addTo(mymap),
   halfDoorBrewingCompany: L.marker([32.5417302, -117.163817]).addTo(mymap),
   theTacoStandDowntown: L.marker([32.717740, -117.158670]).addTo(mymap),
@@ -143,17 +179,3 @@ currentLocButton.onclick = function () {
 span.onclick = function () {
   modalBackground.style.display= "none"
 }
-
-
-// function onMapClick(coorArr) {
-// console.log(coorArr)
-//   L.Routing.control({
-//     waypoints: [
-//       L.latLng(currentLat, currentLong),
-//       L.latLng(32.730831, -117.142586)
-//     ]
-//   }).addTo(mymap);
-   
-// }
-
-// mymap.on('click', onMapClick);
