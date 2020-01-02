@@ -32,7 +32,7 @@ let showMapRoute = function (addressInfo)  {
 
 
 const markerObject = { 
-  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=showMapRoute(locationObj)>test</button>.").on('click', function () {
+  balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
     $.ajax({
       url: `http://localhost:3000/api/routeInfo/`,
       method: `PUT`,
@@ -55,7 +55,7 @@ const markerObject = {
     
        
   }),
-  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=showMapRoute()>test</button>.").on('click', function () {
+  aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
     $.ajax({
       url: `http://localhost:3000/api/routeInfo/`,
       method: `PUT`,
@@ -70,6 +70,9 @@ const markerObject = {
         console.log(data);
       }
     })
+
+    locationObj.locationName = "AleSmith Brewing Company"
+    locationObj.locationAddress = "9990 AleSmith Ct, San Diego, CA 92126" 
   }),
   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap),
   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap),
