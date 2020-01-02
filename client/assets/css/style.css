@@ -5,22 +5,19 @@ h1{
     text-align: center; 
 }
 
+#mapContainer {
+    display: flex;
+    justify-content: center; ;
+}
+
 #MapArea {
     border: solid 2px black;
     margin-left: 2%;
     margin-right: 2%; 
-    width: 70%
+    padding: 5%; 
+    width: 100%
 }
 
-#mapContainer {
-    display: flex;
-}
-
-
-#SideBar {
-    border: solid 2px black;
-    width: 25%
-}
 
 #BusinessTypeContainer {
     display: grid; 
