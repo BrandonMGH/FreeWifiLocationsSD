@@ -33,7 +33,7 @@ markerInfo.map(location => {
   console.log(location)
     L.marker([location.endLat, location.endLong]).addTo(mymap).bindPopup(`<b>${location.locationName}</b><button class=test>Generate Map</button>.`).on('click', function () {
     $.ajax({
-      url: `http://localhost:3000/api/routeInfo/`,
+      url:  `http://localhost:3000/api/routeInfo/`,
       method: `PUT`,
       dataType: `json`,
       data: {
