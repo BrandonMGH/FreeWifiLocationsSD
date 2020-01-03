@@ -4,8 +4,6 @@ const express = require("express")
 const fetch = require("node-fetch")
 const path = require("path")
 const app = express();
-const https = require('https')
-const fs = require('fs')
 const PORT = process.env.PORT || 3000
 let routeData = require("./client/assets/js/Data/routeData.js")
 
@@ -64,14 +62,7 @@ app.put("/api/routeInfo/", (req, res) =>{
 })
 
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running on Port: ${PORT}`)
-// })
-
-https.createServer({
-    key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.cert')
-  }, app)
-  .listen(PORT, function () {
+app.listen(PORT, () => {
     console.log(`Server is running on Port: ${PORT}`)
-  })
+})
+
