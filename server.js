@@ -4,14 +4,12 @@ const express = require("express")
 const fetch = require("node-fetch")
 const path = require("path")
 const app = express();
-const PORT = 3000
-const routeData = require("./client/assets/js/Data/routeData.js")
+const PORT = process.env.PORT || 3000
+let routeData = require("./client/assets/js/Data/routeData.js")
 
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-
+app.use(express.json())
 app.use(express.static("client/assets"));
 
 //** GET ROUTES  **//
