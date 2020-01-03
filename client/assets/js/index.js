@@ -33,7 +33,7 @@ markerInfo.map(location => {
   console.log(location)
     L.marker([location.endLat, location.endLong]).addTo(mymap).bindPopup(`<b>${location.locationName}</b><button class=test>Generate Map</button>.`).on('click', function () {
     $.ajax({
-      url:  `http://localhost:3000/api/routeInfo/`,
+      url:  `/api/routeInfo/`,
       method: `PUT`,
       dataType: `json`,
       data: {
@@ -81,7 +81,7 @@ let getCords = function (position) {
 }
 
 let fetchMapQuestAddress = function (paramOne, paramTwo) {
-  fetch(`http://localhost:3000/MapQuestInfo/${paramOne}/${paramTwo}`)
+  fetch(`/MapQuestInfo/${paramOne}/${paramTwo}`)
     .then(res => res.json())
     .then(data => {
       let addressInfo = data.searchResults[0].fields

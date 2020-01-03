@@ -4,7 +4,7 @@ mapGenerate.onclick = function () {
   window.location.reload(true);
 }
 
-fetch(`http://localhost:3000/api/routeInfo`)
+fetch(`/api/routeInfo`)
 .then(res => res.json())
 .then(data => {
   let currentLat = data.currentLat
