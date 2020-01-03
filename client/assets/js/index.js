@@ -4,6 +4,100 @@ let locationObj = {
   locationName: "Default",
   locationAddress: "Default" 
 }
+let markerInfo = [
+  {
+     locationName: "Balboa Park",
+     locationAddress: "San Diego, CA",
+     endLat: 32.730831,
+     endLong: -117.142586
+   },
+   {
+     locationName: "AleSmith Brewing Company",
+     locationAddress: "9990 AleSmith Ct, San Diego, CA 92126",
+     endLat: 32.888168,
+     endLong: -117.149643
+   },
+   {
+    locationName: "Ballast Point Brewing and Spirits",
+    locationAddress: "9045 Carroll Way, San Diego, CA 92121",
+    endLat: 32.887871,
+    endLong: -117.158119
+  },
+  {
+    locationName: "Fairmont Grand Del Mar",
+    locationAddress: "9045 Carroll Way, San Diego, CA 92121",
+    endLat: 32.938412,
+    endLong: -117.197357
+  },
+  {
+    locationName: "PetCo Park",
+    locationAddress: "100 Park Blvd, San Diego, CA 92101",
+    endLat: 32.706539,
+    endLong: -117.156349
+  },
+  {
+    locationName: "Half Door Brewing Co.",
+    locationAddress: "903 Island Ave, San Diego, CA 92101",
+    endLat: 32.710239,
+    endLong: -117.156258
+  },
+  {
+    locationName: "Societe Brewing Company",
+    locationAddress: "8262 Clairemont Mesa Blvd, San Diego, CA 92111",
+    endLat: 32.834900,
+    endLong: -117.146180
+  },
+  {
+    locationName: "Fashion Valley",
+    locationAddress: "7007 Friars Rd, San Diego, CA 92108",
+    endLat: 32.768051,
+    endLong: -117.166901
+  },
+  {
+    locationName: "harrysCoffeeShop",
+    locationAddress: "7545 Girard Ave, La Jolla, CA 92037",
+    endLat: 32.841530,
+    endLong: -117.272440
+  },
+  {
+    locationName: "La Valencia Hotel",
+    locationAddress: "1132 Prospect St, La Jolla, CA 92037",
+    endLat: 32.848640,
+    endLong: -117.273770
+  },
+  {
+    locationName: "Eddie V's Prime Seafood",
+    locationAddress: "1270 Prospect St, La Jolla, CA 92037",
+    endLat: 32.849610,
+    endLong: -117.271150
+  },
+  {
+    locationName: "Island Prime",
+    locationAddress: "880 Harbor Island Dr, San Diego, CA 92101",
+    endLat: 32.724370,
+    endLong: -117.188640
+  },
+  {
+    locationName: "BO-beau kitchen + bar",
+    locationAddress: "4996 W Point Loma Blvd, San Diego, CA 92107",
+    endLat: 32.753050,
+    endLong: -117.245110
+  },
+  {
+    locationName: "Cafe Moto",
+    locationAddress: "2619 National Ave, San Diego, CA 92113",
+    endLat: 32.695630,
+    endLong: -117.137660
+  },
+  {
+    locationName: "Philz Coffee Shop Del Mar",
+    locationAddress: "Highlands Town Center, 12873 El Camino Real m1 Del Mar, San Diego, CA 92130",
+    endLat: 32.952070,
+    endLong: -117.232490
+  },
+
+ 
+ ]
 
 const addressTitle = document.getElementById("addressTitle")
 const addressLocation = document.getElementById("addressLocation")
@@ -30,23 +124,7 @@ let showMapRoute = function (addressInfo)  {
   addressLocation.innerHTML = addressInfo.locationAddress
 }
 
-let testObejct = [
- {
-    locationName: "Test Location",
-    location: "San Diego, CA",
-    endLat: 32.5417302,
-    endLong: -117.163817
-  },
-  {
-    locationName: "Balboa Park",
-    location: "San Diego, CA",
-    endLat: 32.730831,
-    endLong: -117.142586
-  }
-
-]
-
-testObejct.map(location => {
+markerInfo.map(location => {
   console.log(location)
     L.marker([location.endLat, location.endLong]).addTo(mymap).bindPopup(`<b>${location.locationName}</b><button onclick=showMapRoute(locationObj)>Generate Map</button>.`).on('click', function () {
     $.ajax({
@@ -54,8 +132,6 @@ testObejct.map(location => {
       method: `PUT`,
       dataType: `json`,
       data: {
-        locationName: `${location.locationName}`,
-        locationAddress: `${location.location}`,
         currentLat: currentLat,
         currentLong: currentLong,
         endLat: location.endLat,
@@ -67,110 +143,12 @@ testObejct.map(location => {
     })
   
     locationObj.locationName = `${location.locationName}`
-    locationObj.locationAddress = `${location.locationName}`
+    locationObj.locationAddress = `${location.locationAddress}`
     
        
   })
 })
 
-// const markerObject = { 
-//   balboaParkMarker:L.marker([32.730831, -117.142586]).addTo(mymap).bindPopup("<b> Balboa Park </b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
-//     $.ajax({
-//       url: `http://localhost:3000/api/routeInfo/`,
-//       method: `PUT`,
-//       dataType: `json`,
-//       data: {
-//         locationName: "Balboa Park",
-//         locationAddress: "San Diego, CA",
-//         currentLat: currentLat,
-//         currentLong: currentLong,
-//         endLat: 32.730831,
-//         endLong: -117.142586
-//       },
-//       success: function(data){
-//         console.log(data);
-//       }
-//     })
-  
-//     locationObj.locationName = "Balboa Park"
-//     locationObj.locationAddress = "San Diego, CA" 
-    
-       
-//   }),
-//   aleSmithBrewingCompany: L.marker([32.888168, -117.149643]).addTo(mymap).bindPopup("<b>Ale Smith Brewing Company</b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
-//     $.ajax({
-//       url: `http://localhost:3000/api/routeInfo/`,
-//       method: `PUT`,
-//       dataType: `json`,
-//       data: {
-//         currentLat: currentLat,
-//         currentLong: currentLong,
-//         endLat: 32.888168,
-//         endLong: -117.149643
-//       },
-//       success: function(data){
-//         console.log(data);
-//       }
-//     })
-
-//     locationObj.locationName = "AleSmith Brewing Company"
-//     locationObj.locationAddress = "9990 AleSmith Ct, San Diego, CA 92126" 
-//   }),
-//   ballastPointBrewingAndSpirits: L.marker([32.887871, -117.158119]).addTo(mymap).bindPopup("<b>Ballast Point Brewing and Spirits</b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
-//     $.ajax({
-//       url: `http://localhost:3000/api/routeInfo/`,
-//       method: `PUT`,
-//       dataType: `json`,
-//       data: {
-//         currentLat: currentLat,
-//         currentLong: currentLong,
-//         endLat: 32.887871,
-//         endLong: -117.158119
-//       },
-//       success: function(data){
-//         console.log(data);
-//       }
-//     })
-
-//     locationObj.locationName = "Ballast Point Brewing and Spirits"
-//     locationObj.locationAddress = "9045 Carroll Way, San Diego, CA 92121" 
-//   }),
-//   fairmontGrandDelMar: L.marker([32.938412, -117.197357]).addTo(mymap).bindPopup("<b>Fairmont Grand Del Mar</b><button onclick=showMapRoute(locationObj)>Generate Map</button>.").on('click', function () {
-//     $.ajax({
-//       url: `http://localhost:3000/api/routeInfo/`,
-//       method: `PUT`,
-//       dataType: `json`,
-//       data: {
-//         currentLat: currentLat,
-//         currentLong: currentLong,
-//         endLat: 32.938412,
-//         endLong: -117.197357
-//       },
-//       success: function(data){
-//         console.log(data);
-//       }
-//     })
-
-//     locationObj.locationName = "Fairmont Grand Del Mar"
-//     locationObj.locationAddress = "9045 Carroll Way, San Diego, CA 92121" 
-//   }),
-//   petcoPark: L.marker([32.706539, -117.156349]).addTo(mymap),
-//   halfDoorBrewingCompany: L.marker([32.5417302, -117.163817]).addTo(mymap),
-//   theTacoStandDowntown: L.marker([32.717740, -117.158670]).addTo(mymap),
-//   societeBrewingCompany: L.marker([32.834900, -117.146180]).addTo(mymap),
-//   fashionValley: L.marker([32.768051, -117.166901]).addTo(mymap),
-//   harrysCoffeeShop: L.marker([32.841530, -117.272440]).addTo(mymap),
-//   laValenciaHotel: L.marker([32.848640, -117.273770]).addTo(mymap),
-//   eddieVsPrimeSeafood: L.marker([32.849610, -117.271150]).addTo(mymap),
-//   islandPrimeAndCLevel: L.marker([32.724370, -117.188640]).addTo(mymap),
-//   bOBeauKitchenBar: L.marker([32.753050, -117.245110]).addTo(mymap),
-//   cafeMoto: L.marker([32.695630, -117.137660]).addTo(mymap),
-//   philzCoffeeShop: L.marker([32.977310, -117.230377]).addTo(mymap),
-//   firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
-//   firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
-//   firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
-//   firstMarket: L.marker([32.5417302, -117.163817]).addTo(mymap),
-// }
 const attribution ='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
 const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 const tiles = L.tileLayer(tileUrl, { attribution });
