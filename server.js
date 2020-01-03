@@ -5,7 +5,7 @@ const fetch = require("node-fetch")
 const path = require("path")
 const app = express();
 const PORT = 3000
-let routeData = require("./client/assets/js/routeData.js")
+let routeData = require("./client/assets/js/Data/routeData.js")
 
 
 app.use(express.urlencoded({ extended: true }));
