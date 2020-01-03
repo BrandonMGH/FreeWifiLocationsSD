@@ -5,7 +5,7 @@ const fetch = require("node-fetch")
 const path = require("path")
 const app = express();
 const PORT = 3000
-let routeData = require("./client/assets/js/Data/routeData.js")
+const routeData = require("./client/assets/js/Data/routeData.js")
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -63,8 +63,7 @@ app.put("/api/routeInfo/", (req, res) =>{
  res.send(routeData)
 })
 
-console.log(routeData)
 
 app.listen(PORT, () => {
-    console.log("Server is running")
+    console.log(`Server is running on Port: ${PORT}`)
 })

@@ -1,19 +1,16 @@
+import { markerInfo } from "./Data/mapData.js"
+
 let currentLat = 32.81576
 let currentLong = -117.163817
 let locationObj = {
   locationName: "Default",
   locationAddress: "Default" 
 }
-import { markerInfo } from "./Data/mapData.js"
-console.log(markerInfo)
-
-
 const addressTitle = document.getElementById("addressTitle")
 const addressLocation = document.getElementById("addressLocation")
 const currentLocButton = document.getElementById("currentLocButton")
 const modalBackground = document.getElementById("modalBackground")
 const span = document.getElementsByClassName("close")[0];
-
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
 const currentLocIcon = L.icon({
   iconUrl: './images/arrowdownred.png',
@@ -99,6 +96,11 @@ let fetchMapQuestAddress = function (paramOne, paramTwo) {
     })
 }
 
+// ** ON CLICK EVENTS ** // 
+
+$(document).on('click', '.test', function() {
+  showMapRoute(locationObj)
+})
 
 currentLocButton.onclick = function () {
   getLocation()
@@ -108,6 +110,3 @@ span.onclick = function () {
   modalBackground.style.display= "none"
 }
 
-$(document).on('click', '.test', function() {
-  showMapRoute(locationObj)
-})

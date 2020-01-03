@@ -7,7 +7,6 @@ mapGenerate.onclick = function () {
 fetch(`http://localhost:3000/api/routeInfo`)
 .then(res => res.json())
 .then(data => {
-  console.log(data)
   let currentLat = data.currentLat
   let currentLong = data.currentLong
   let endLat = data.endLat
