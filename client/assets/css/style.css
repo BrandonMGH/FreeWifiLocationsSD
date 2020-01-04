@@ -10,41 +10,34 @@ h1{
     justify-content: center; ;
 }
 
-#MapArea {
+#mapContentContainer {
     border: solid 2px black;
     margin-left: 2%;
     margin-right: 2%; 
     padding: 5%; 
-    width: 100%
-}
-
-
-#BusinessTypeContainer {
-    display: grid; 
-    text-align: center; 
-}
-
-#BusinessTypesContainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: center;
-}
-
-#mapContentContainer{
+    width: 100%;
     display: flex; 
     justify-content: space-evenly; 
 }
 
 
-#addressesContainer, #mapid {
+#currentLocContainer, #mapid {
     display: grid; 
+    justify-content: center;
+    text-align: center; 
+    padding: 5%; 
+    margin: 1%; 
+    border-radius: 5%;
+}
+
+#currentLocContainer {
+    background-color: blue; 
 }
 
 #mapid {
     height: 350px; 
     width: 66%; 
-    border-style: solid;
-    border-color: black
+    border: blue 5px solid; 
 }
 
 

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Wifi Locations in San Diego</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -17,23 +18,23 @@
 
 <body>
     <div>
-        <h1>Free Wifi Near You (San Diego)</h1>
+        <header>
+            <h1>Free Wifi Near You (San Diego)</h1>
+        </header>
         <div id="mapContainer">
-            <div id="MapArea">
-                <div id="mapContentContainer">
-                    <div id="addressesContainer">
-                        <div>
-                            <h3>Current Location</h3>
-                            <button id="currentLocButton">Current Location</button>
-                        </div>
-                        <div>
-                            <h4>Address closest to you:</h4>
-                            <p id="addressLineOne">--</p>
-                            <p id="addressLineTwo">--</p>
-                        </div>
+            <div id="mapContentContainer">
+                <div id="currentLocContainer">
+                    <div>
+                        <h3>Current Location</h3>
+                        <button id="currentLocButton">Current Location</button>
                     </div>
-                    <div id="mapid"></div>
+                    <div>
+                        <h4>Address closest to you:</h4>
+                        <p id="addressLineOne">--</p>
+                        <p id="addressLineTwo">--</p>
+                    </div>
                 </div>
+                <div id="mapid"></div>
             </div>
         </div>
     </div>
