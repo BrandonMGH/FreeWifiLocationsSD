@@ -2,9 +2,8 @@
 /** INDEX.HTML CSS **/
 
 body {
-    background-image: url("/images/SanDiegoDarkHD.jpg");
+    background-image: url("/images/SanDiegoLightHD.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 header {
@@ -18,16 +17,17 @@ header {
 }
 
 #mapContentContainer {
-    background-image: url("/images/SanDiegoLightHD.jpg");
+    background-image: url("/images/SanDiegoDarkHD.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    border: white solid 1px; 
+    border: white solid 5px; 
+    padding: 2%; 
     margin-left: 2%;
     margin-right: 2%; 
     width: 100%;
     display: flex; 
     justify-content: space-evenly; 
-    border-radius: 5%;
+    border-radius: 10%;
 }
 
 
@@ -37,12 +37,13 @@ header {
     text-align: center; 
     padding: 5%; 
     margin: 1%; 
-    border-radius: 5%;
+    border-radius: 15%;
 }
 
 #currentLocContainer {
-    background-color: blue; 
+    background-color: white;
 }
+
 
 #mapid {
     height: 350px; 
