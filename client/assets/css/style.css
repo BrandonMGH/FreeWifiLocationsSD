@@ -10,15 +10,20 @@ body {
     background-size: cover;
 }
 
-header {
-    color: white; 
+h1 { 
     text-align: center; 
+    font-family: 'Kaushan Script', cursive;
+    font-size: 60px; 
+}
+
+#titleText{
+    color: white; 
 }
 
 
 #mapContainer {
     display: flex;
-    justify-content: center; ;
+    justify-content: center; 
 }
 
 #mapContentContainer {
@@ -51,6 +56,8 @@ header {
     background-color: black;
     color: white; 
     opacity: .8;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px; 
 }
 
 
@@ -60,7 +67,6 @@ header {
     color: white; 
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 75px;
@@ -74,11 +80,22 @@ header {
 }
 
 #mapid {
-    height: 350px; 
+    height: 75%; 
     width: 66%; 
     border: white 5px solid; 
 }
 
+@media (max-width: 750px) { 
+    #mapid{
+        height: 85%;  
+    }
+ }
+
+ @media (max-width: 600px ){
+     #mapid{
+         height: 90%
+     }
+ }
 
 #modalBackground {
     display: none; 
