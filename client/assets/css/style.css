@@ -1,9 +1,10 @@
 
 /** INDEX.HTML CSS **/
 
-h1{
-    text-align: center; 
+body {
+    background-image: url("/images/EarthHD.jpg");
 }
+
 
 #mapContainer {
     display: flex;
@@ -11,13 +12,13 @@ h1{
 }
 
 #mapContentContainer {
-    border: solid 2px black;
     margin-left: 2%;
     margin-right: 2%; 
     padding: 5%; 
     width: 100%;
     display: flex; 
     justify-content: space-evenly; 
+    border-radius: 5%;
 }
 
 
