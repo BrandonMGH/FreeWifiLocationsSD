@@ -31,7 +31,7 @@ let showMapRoute = function (addressInfo)  {
 
 markerInfo.map(location => {
   console.log(location)
-    L.marker([location.endLat, location.endLong]).addTo(mymap).bindPopup(`<b>${location.locationName}</b><button class=test>Generate Map</button>.`).on('click', function () {
+    L.marker([location.endLat, location.endLong]).addTo(mymap).bindPopup(`<div id=marketPopUp><b>${location.locationName}</b><button class=markerPopUpButton>Generate Map</button></div>.`).on('click', function () {
     $.ajax({
       url:  `/api/routeInfo/`,
       method: `PUT`,
@@ -98,7 +98,7 @@ let fetchMapQuestAddress = function (paramOne, paramTwo) {
 
 // ** ON CLICK EVENTS ** // 
 
-$(document).on('click', '.test', function() {
+$(document).on('click', '.markerPopUpButton', function() {
   showMapRoute(locationObj)
 })
 

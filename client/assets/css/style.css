@@ -13,11 +13,11 @@ body {
 h1 { 
     text-align: center; 
     font-family: 'Kaushan Script', cursive;
-    font-size: 60px; 
 }
 
 #titleText{
     color: white; 
+    font-size: 60px; 
 }
 
 
@@ -62,13 +62,14 @@ h1 {
 
 
 #currentLocButton {
+    font-family: 'Oswald', sans-serif;
     border: 2px solid white; 
     background-color: black; 
     color: white; 
     padding: 10% 10%;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
+    font-size: 24px;
     border-radius: 75px;
     cursor: pointer
 }
@@ -95,6 +96,26 @@ h1 {
      #mapid{
          height: 90%
      }
+ }
+
+ #marketPopUp{
+     display: grid;
+     justify-content: center;
+ }
+
+ .markerPopUpButton{
+     border: solid 1px black;
+     background-color: white; 
+     color: black; 
+     cursor: pointer;
+     border-radius: 75px;
+     margin-top: 5%; 
+ }
+
+ .markerPopUpButton:hover {
+    border: solid 1px white;
+    background-color: black; 
+    color: white; 
  }
 
 #modalBackground {

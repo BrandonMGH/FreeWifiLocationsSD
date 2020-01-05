@@ -48,7 +48,7 @@ export const markerInfo = [
       endLong: -117.166901
     },
     {
-      locationName: "harrysCoffeeShop",
+      locationName: "Harrys Coffee Shop",
       locationAddress: "7545 Girard Ave, La Jolla, CA 92037",
       endLat: 32.841530,
       endLong: -117.272440
