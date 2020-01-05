@@ -1,0 +1,30 @@
+#mapRouteId {
+    width: 100%;
+    height: 500px; 
+}
+
+#mapRouteContainer {
+    display: flex;
+    justify-content: center; 
+}
+
+.close{
+        color: black; 
+        float: right;
+        font-size: 30px;
+        font-weight: bold;
+        margin-right: 1%; 
+}
+
+.close:hover,
+.close:focus {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}

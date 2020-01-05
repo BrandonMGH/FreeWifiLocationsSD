@@ -139,6 +139,7 @@ h1 {
     justify-content: center;
     margin: auto; 
     border: black 2px solid;
+    border-radius: 75px;
     background: white; 
     top: 10%; 
     height: 80%; 
@@ -173,37 +174,4 @@ h1 {
 #routeObject {
     width: 90%;
     height: 100%; 
-}
-
-/** MAPROUTE.HTML CSS **/ 
-
-#mapRouteId {
-    width: 100%;
-    height: 500px; 
-}
-
-#mapRouteContainer {
-    display: flex;
-    justify-content: center; 
-}
-
-.close{
-        color: black; 
-        float: right;
-        font-size: 30px;
-        font-weight: bold;
-        margin-right: 1%; 
-}
-
-.close:hover,
-.close:focus {
-  color: blue;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
 }
