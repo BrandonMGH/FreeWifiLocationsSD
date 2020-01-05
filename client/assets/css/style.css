@@ -2,7 +2,7 @@
 /** INDEX.HTML CSS **/
 
 body {
-    background-image: url("/images/EarthHD.jpg");
+    background-image: url("/images/SanDiegoDarkHD.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -18,6 +18,9 @@ header {
 }
 
 #mapContentContainer {
+    background-image: url("/images/SanDiegoLightHD.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     border: white solid 1px; 
     margin-left: 2%;
     margin-right: 2%; 
