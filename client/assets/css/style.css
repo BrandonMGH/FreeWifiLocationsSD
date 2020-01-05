@@ -3,6 +3,12 @@
 
 body {
     background-image: url("/images/EarthHD.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    color: white; 
 }
 
 
@@ -12,9 +18,9 @@ body {
 }
 
 #mapContentContainer {
+    border: white solid 1px; 
     margin-left: 2%;
     margin-right: 2%; 
-    padding: 5%; 
     width: 100%;
     display: flex; 
     justify-content: space-evenly; 
