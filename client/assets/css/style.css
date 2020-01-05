@@ -43,22 +43,34 @@ header {
     padding: 5%; 
     margin: 1%; 
     border-radius: 75px;
+    text-decoration: none;
 }
 
 #currentLocContainer {
     border: 2px solid white; 
-    background-color: white;
-    opacity: .9;
+    background-color: black;
+    color: white; 
+    opacity: .8;
 }
 
+
 #currentLocButton {
-    border: none;
+    border: 2px solid white; 
+    background-color: black; 
+    color: white; 
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border-radius: 75px;
+    cursor: pointer
+}
 
+#currentLocButton:hover {
+    background-color: white;
+    color: black; 
+    border: solid 2px black; 
 }
 
 #mapid {
