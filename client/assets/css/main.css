@@ -44,8 +44,8 @@ h1 {
 @media (max-width: 850px){
     #mapContentContainer {
         grid-template-columns: 100%;
-        grid-template-rows: 30% 70%;
-        height: 2000px; 
+        grid-template-rows: 50% 50%;
+        height: 1500px; 
         align-content: center;
     }
 }
