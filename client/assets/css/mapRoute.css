@@ -1,13 +1,29 @@
-#wrapper{
-    display: grid;
-    grid-template-columns: 1fr; 
-    justify-content: center;
+#buttonContainer {
+    display: grid; 
+    justify-content: center; 
+    margin: 5%; 
 }
 
 #mapRouteRefresh{
-    width: 10%; 
+    font-family: 'Oswald', sans-serif;
+    border: 2px solid black; 
+    background-color: white; 
+    color: black; 
+    font-size: 24px;
+    border-radius: 75px;
+    cursor: pointer;
+    width:200px; 
+    margin: 5%;  
+    height: 100px;
+    margin: 0 auto;
+    
 }
 
+#mapRouteRefresh:hover {
+    border: 2px solid white; 
+    background-color: black; 
+    color: white;
+}
 
 #mapRouteContainer {
     display: flex;
@@ -19,9 +35,3 @@
     height: 500px; 
 }
 
-
-/* .modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-} */
