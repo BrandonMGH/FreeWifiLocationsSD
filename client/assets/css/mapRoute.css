@@ -1,11 +1,22 @@
-#mapRouteId {
-    width: 100%;
-    height: 500px; 
+#wrapper{
+    display: grid;
+    grid-template-columns: 1fr; 
+    justify-content: center;
 }
+
+#mapRouteRefresh{
+    width: 10%; 
+}
+
 
 #mapRouteContainer {
     display: flex;
     justify-content: center; 
+}
+
+#mapRouteId {
+    width: 100%;
+    height: 500px; 
 }
 
 

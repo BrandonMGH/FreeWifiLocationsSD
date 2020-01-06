@@ -35,9 +35,19 @@ h1 {
     margin-left: 2%;
     margin-right: 2%; 
     width: 100%;
-    display: flex; 
+    display: grid; 
+    grid-template-columns: 30% 70%; 
     justify-content: space-evenly; 
     border-radius: 75px;
+}
+
+@media (max-width: 850px){
+    #mapContentContainer {
+        grid-template-columns: 100%;
+        grid-template-rows: 30% 70%;
+        height: 2000px; 
+        align-content: center;
+    }
 }
 
 
@@ -81,8 +91,8 @@ h1 {
 }
 
 #mapid {
-    height: 75%; 
-    width: 66%; 
+    height: 80%; 
+    width: 85%; 
     border: white 5px solid; 
 }
 
