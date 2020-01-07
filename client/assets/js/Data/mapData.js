@@ -88,5 +88,109 @@ export const markerInfo = [
       locationAddress: "Highlands Town Center, 12873 El Camino Real m1 Del Mar, San Diego, CA 92130",
       endLat: 32.952070,
       endLong: -117.232490
-    }];
+    },
+    {
+      locationName: "Vinaka Cafe",
+      locationAddress: "300 Carlsbad Village Dr #211, Carlsbad, CA 92008",
+      endLat: 33.159410,
+      endLong: -117.350510
+    },
+    {
+      locationName: "Pier View Coffee Co",
+      locationAddress: "300 Pier View Way, Oceanside, CA 92054",
+      endLat: 33.195900,
+      endLong: -117.381440
+    },
+    {
+      locationName: "Brown Cup Cafe & Lounge",
+      locationAddress: "401 N Coast Hwy ste e, Oceanside, CA 92054",
+      endLat: 33.198090,
+      endLong: -117.381737
+    },
+    {
+      locationName: "Skybound Coffee + Dessert Lounge",
+      locationAddress: "1661-A S Melrose Dr, Vista, CA 92081",
+      endLat: 33.165850,
+      endLong: -117.246620
+    },
+    {
+      locationName: "Starbucks",
+      locationAddress: "30 Main St #190, Vista, CA 92083",
+      endLat: 33.200580,
+      endLong: -117.244870
+    },
+    {
+      locationName: "Vista Way Cafe",
+      locationAddress: "868 E Vista Way, Vista, CA 920843",
+      endLat: 33.211020,
+      endLong: -117.233500
+    },
+    {
+      locationName: "The Coffee Bean & Tea Leaf",
+      locationAddress: "2508 El Camino Real Suite F, Carlsbad, CA 92008",
+      endLat: 33.180200,
+      endLong: -117.326670
+    },
+    {
+      locationName: "Perks Coffee House",
+      locationAddress: "803 S Twin Oaks Valley Rd #110, San Marcos, CA 92078",
+      endLat: 33.118820,
+      endLong: -117.164660
+    },
+    {
+      locationName: "McDonald's",
+      locationAddress: "3794 Plaza, Oceanside, CA 92056",
+      endLat: 33.182760,
+      endLong: -117.293590
+    },
+    {
+      locationName: "McDonald's",
+      locationAddress: "185 Old Grove Rd, Oceanside, CA 92057",
+      endLat: 33.231880,
+      endLong: -117.307760
+    },
+    {
+      locationName: "Panera Bread",
+      locationAddress: "575 Grand Ave, San Marcos, CA 92078",
+      endLat: 33.136470,
+      endLong: -117.176570
+    },
+    {
+      locationName: "McDonald's",
+      locationAddress: "1701 Oceanside Blvd, Oceanside, CA 92054",
+      endLat: 33.190390,
+      endLong: -117.361180
+    },
+    {
+      locationName: "Banana Dang Coffee",
+      locationAddress: "115 S Coast Hwy, Oceanside, CA 92054",
+      endLat: 33.194470,
+      endLong: -117.378390
+    },
+    {
+      locationName: "Denny's",
+      locationAddress: "605 College Blvd, Oceanside, CA 92057",
+      endLat: 33.243080,
+      endLong: -117.290660
+    },
+    {
+      locationName: "Old California Coffee House and Eatery",
+      locationAddress: "1080 W San Marcos Blvd, San Marcos, CA 92078",
+      endLat: 33.135190,
+      endLong: -117.190890
+    },
+    {
+      locationName: "Revolution Roasters",
+      locationAddress: "1836 S Coast Hwy, Oceanside, CA 92054",
+      endLat: 33.174000,
+      endLong: -117.361100
+    },
+    {
+      locationName: "Starbucks",
+      locationAddress: "320 Valley Pkwy, Escondido, CA 92025",
+      endLat: 33.124000,
+      endLong: -117.079100
+    },
+  
+  ];
 
