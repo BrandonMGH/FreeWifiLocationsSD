@@ -120,6 +120,7 @@ h1 {
      cursor: pointer;
      border-radius: 75px;
      margin-top: 5%; 
+     padding: 5%; 
  }
 
  .markerPopUpButton:hover {
@@ -159,6 +160,13 @@ h1 {
     -webkit-animation-duration: 0.5s;
     animation-name: topReveal;
     animation-duration: 0.5s
+}
+
+@media (max-width: 750px){
+    #modalContainer {
+        height: 100%;
+        width: 100%; 
+    }
 }
 
 #addressContainer {
