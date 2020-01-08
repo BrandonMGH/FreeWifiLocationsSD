@@ -33,7 +33,7 @@ https://free-wifi-near-you.herokuapp.com/
 
 - Need to improve the design of the app overall so that it is more mobile friendly.
 - Need to apply additional styling to the map route inside of the map route modal.
-- Need make it so that after a marker is clicked, the generated route to that marker from the users current location is not displayed until they click on the generate route button inside of the modal. 
+- Need to make it so that after a marker is clicked, the generated route to that marker from the users current location is not displayed until they click on the generate route button inside of the modal. 
 - Need to add more central county markers 
 
 #### Author: Brandon Harris
