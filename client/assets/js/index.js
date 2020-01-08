@@ -12,6 +12,24 @@ const currentLocButton = document.getElementById("currentLocButton")
 const modalBackground = document.getElementById("modalBackground")
 const span = document.getElementsByClassName("close")[0];
 const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117.163817], 12);
+const blueMarkerArrow = L.icon({
+  iconUrl: './images/BlueMarkerArrow.png',
+  iconSize:     [45, 45], 
+  iconAnchor:   [25, 90], 
+  popupAnchor:  [-3, -76] 
+})
+const redMarkerArrow = L.icon({
+  iconUrl: './images/RedMarkerArrow.png',
+  iconSize:     [45, 45], 
+  iconAnchor:   [25, 90], 
+  popupAnchor:  [-3, -76] 
+})
+const greenMarkerArrow = L.icon({
+  iconUrl: './images/GreenMarkerArrow.png',
+  iconSize:     [45, 45], 
+  iconAnchor:   [25, 90], 
+  popupAnchor:  [-3, -76] 
+})
 const currentLocIcon = L.icon({
   iconUrl: './images/arrowdownred.png',
   shadowUrl: './images/arrowdownredshadow.png',
@@ -31,7 +49,7 @@ let showMapRoute = function (addressInfo)  {
 
 markerInfo.map(location => {
   console.log(location)
-    L.marker([location.endLat, location.endLong]).addTo(mymap).bindPopup(`<div id=marketPopUp><b>${location.locationName}</b><button class=markerPopUpButton>Generate Map</button></div>.`).on('click', function () {
+    L.marker([location.endLat, location.endLong], location.locationType === "Independent" ? {icon:greenMarkerArrow} : location.locationType === "Corporate" ? {icon: redMarkerArrow} : {icon:blueMarkerArrow} ).addTo(mymap).bindPopup(`<div id=marketPopUp><b>${location.locationName}</b><button class=markerPopUpButton>Generate Map</button></div>.`).on('click', function () {
     $.ajax({
       url:  `/api/routeInfo/`,
       method: `PUT`,
