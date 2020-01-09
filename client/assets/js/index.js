@@ -48,7 +48,6 @@ let showMapRoute = function (addressInfo)  {
 }
 
 markerInfo.map(location => {
-  console.log(location)
     L.marker([location.endLat, location.endLong], location.locationType === "Independent" ? {icon:greenMarkerArrow} : location.locationType === "Corporate" ? {icon: redMarkerArrow} : {icon:blueMarkerArrow} ).addTo(mymap).bindPopup(`<div id=marketPopUp><b>${location.locationName}</b><button class=markerPopUpButton>Generate Map</button></div>.`).on('click', function () {
     $.ajax({
       url:  `/api/routeInfo/`,
@@ -60,8 +59,8 @@ markerInfo.map(location => {
         endLat: location.endLat,
         endLong: location.endLong
       },
-      success: function(data){
-        console.log(data);
+      error: function(error){
+        console.log(error)
       }
     })
   
@@ -93,7 +92,6 @@ let printMap = function (Lat, Long) {
 let getCords = function (position) {
    currentLat = position.coords.latitude
    currentLong = position.coords.longitude
-  console.log(`Latitude: ${currentLat}, Longitutde: ${currentLong}`)
   fetchMapQuestAddress(currentLat, currentLong)
   printMap(currentLat, currentLong)
 }
@@ -107,10 +105,11 @@ let fetchMapQuestAddress = function (paramOne, paramTwo) {
       let city = addressInfo.city
       let state = addressInfo.state
       let zipCode = addressInfo.postal_code
-      console.log(addressInfo)
       document.getElementById("addressLineOne").innerHTML = address
       document.getElementById("addressLineTwo").innerHTML = `${city}, ${state}, ${zipCode}`
-
+    })
+    .catch(err => {
+      console.log(err)
     })
 }
 
