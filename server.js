@@ -14,11 +14,12 @@ app.use(express.static("client/assets"));
 
 //** GET ROUTES  **//
 
-app.get("/maproutes/", (req, res) => {;
+app.get("/maproutes/", (req, res) => {
+    ;
     res.sendFile(path.join(__dirname, "./client/assets/mapRoute.html"))
 })
 
-app.get("/api/routeInfo", (req, res) =>{
+app.get("/api/routeInfo", (req, res) => {
     res.send(routeData)
 })
 
@@ -36,29 +37,33 @@ app.get("/MapQuestInfo/:lat/:long", async (req, res) => {
     let longitude = req.params.long
     let mapQuestAPIKey = process.env.MAPQUEST_API_KEY
     let mapQuestAPIURL = `http://www.mapquestapi.com/search/v2/radius?key=${mapQuestAPIKey}&maxMatches=4&origin=${latitude},${longitude}`
-    const fetch_response = await fetch(mapQuestAPIURL)
-    const json = await fetch_response.json();
-    res.json(json)
+    try {
+        const fetch_response = await fetch(mapQuestAPIURL)
+        const json = await fetch_response.json();
+        res.json(json)
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 //** POST ROUTES **//
 
 app.post("/userinfo", (req, res) => {
-    let userInfo=req.body
+    let userInfo = req.body
     res.json(userInfo)
 })
 
 
 //** UPDATE ROUTES  **//
 
-app.put("/api/routeInfo/", (req, res) =>{
+app.put("/api/routeInfo/", (req, res) => {
     routeData = {
-    currentLat: req.body.currentLat,
-    currentLong: req.body.currentLong,
-    endLat: req.body.endLat,
-    endLong: req.body.endLong
- }
- res.send(routeData)
+        currentLat: req.body.currentLat,
+        currentLong: req.body.currentLong,
+        endLat: req.body.endLat,
+        endLong: req.body.endLong
+    }
+    res.send(routeData)
 })
 
 
