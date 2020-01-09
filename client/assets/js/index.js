@@ -15,19 +15,19 @@ const mymap = L.map('mapid', {closePopupOnClick: false}).setView([32.81576, -117
 const blueMarkerArrow = L.icon({
   iconUrl: './images/BlueMarkerArrow.png',
   iconSize:     [45, 45], 
-  iconAnchor:   [25, 90], 
+  iconAnchor:   [22, 94], 
   popupAnchor:  [-3, -76] 
 })
 const redMarkerArrow = L.icon({
   iconUrl: './images/RedMarkerArrow.png',
   iconSize:     [45, 45], 
-  iconAnchor:   [25, 90], 
+  iconAnchor:   [22, 94], 
   popupAnchor:  [-3, -76] 
 })
 const greenMarkerArrow = L.icon({
   iconUrl: './images/GreenMarkerArrow.png',
   iconSize:     [45, 45], 
-  iconAnchor:   [25, 90], 
+  iconAnchor:   [22, 94], 
   popupAnchor:  [-3, -76] 
 })
 const currentLocIcon = L.icon({
