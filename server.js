@@ -46,12 +46,6 @@ app.get("/MapQuestInfo/:lat/:long", async (req, res) => {
     }
 })
 
-//** POST ROUTES **//
-
-app.post("/userinfo", (req, res) => {
-    let userInfo = req.body
-    res.json(userInfo)
-})
 
 
 //** UPDATE ROUTES  **//
